@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tester</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+<div class="horizontalStack">
+    <div class="container">    
+        <div class="api-form"> <!-- Changed from form to div -->
+            <label for="urlInput">Server URL:</label>
+            <input type="text" id="urlInput" value="http://localhost:3000">
+            
+            <label for="endpointInput">Endpoint + query : /</label>
+            <input type="text" id="endpointInput" value="/test">
+            <div class="optionContainer">
+                <div>
+                    <label for="methodSelect">Method:</label>
+                    <select id="methodSelect">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="DELETE">DELETE</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="OPTIONS">OPTIONS</option>
+                        <option value="HEAD">HEAD</option>
+                    </select>
+                    <!-- Mode Option -->
+                    <label for="modeSelect">Mode:</label>
+                    <select id="modeSelect">
+                        <option value="cors">cors</option>
+                        <option value="no-cors">no-cors</option>
+                        <option value="same-origin">same-origin</option>
+                    </select>
+    
+                    <!-- Credentials Option -->
+                    <label for="credentialsSelect">Credentials:</label>
+                    <select id="credentialsSelect">
+                        <option value="omit">omit</option>
+                        <option value="same-origin">same-origin</option>
+                        <option value="include">include</option>
+                    </select>
+    
+                </div>
+                <div>
+                        <!-- Cache Option -->
+                    <label for="cacheSelect">Cache:</label>
+                    <select id="cacheSelect">
+                        <option value="default">default</option>
+                        <option value="no-store">no-store</option>
+                        <option value="reload">reload</option>
+                        <option value="no-cache">no-cache</option>
+                        <option value="force-cache">force-cache</option>
+                        <option value="only-if-cached">only-if-cached</option>
+                    </select>
+
+                    <!-- Redirect Option -->
+                    <label for="redirectSelect">Redirect:</label>
+                    <select id="redirectSelect">
+                        <option value="follow">follow</option>
+                        <option value="manual">manual</option>
+                        <option value="error">error</option>
+                    </select>
+
+                    <!-- Referrer Policy Option -->
+                    <label for="referrerPolicySelect">Referrer Policy:</label>
+                    <select id="referrerPolicySelect">
+                        <option value="no-referrer">no-referrer</option>
+                        <option value="no-referrer-when-downgrade">no-referrer-when-downgrade</option>
+                        <option value="origin">origin</option>
+                        <option value="origin-when-cross-origin">origin-when-cross-origin</option>
+                        <option value="same-origin">same-origin</option>
+                        <option value="strict-origin">strict-origin</option>
+                        <option value="strict-origin-when-cross-origin">strict-origin-when-cross-origin</option>
+                        <option value="unsafe-url">unsafe-url</option>
+                    </select>
+                </div>
+                <div>
+                    <!-- Integrity -->
+                    <label for="integrityInput">Integrity:</label>
+                    <input type="text" id="integrityInput" placeholder="sha256-abcdef">
+
+                    <!-- Keepalive -->
+                    <label for="keepaliveCheckbox">Keepalive:</label>
+                    <input type="checkbox" id="keepaliveCheckbox">
+                </div>
+               
+                
+
+            </div>
+            
+
+            <label for="headersInput">Headers (JSON format):</label>
+            <textarea id="headersInput" placeholder="Enter headers here (JSON format)"></textarea>
+            
+            <label for="bodyInput">Request Body (JSON format):</label>
+            <textarea id="bodyInput" placeholder="Enter request body here (JSON format)"></textarea>
+            
+            <div class="left">
+                <button type="button" id="sendButton">Send Request</button>
+                <button type="button" id="clearStorageButton">Clear</button>
+            </div>
+        </div>
+       
+    
+    </div>
+    <div class="container">
+        <strong>Request URL:</strong>
+        <div class="request-url">
+            <span id="requestUrl">No request yet</span>
+        </div>
+    
+        <strong>API Response:</strong>
+        <pre id="apiResponse" class="language-json">No response yet</pre>
+    
+        <strong>Response Time:</strong>
+        <div id="responseTime">No response time yet</div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
